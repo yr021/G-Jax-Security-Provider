@@ -43,9 +43,9 @@ public class YamlConfigurator implements IConfigurator      {
     
     private int  RATIO                 =  1                 ;
     private int  ThreadPoolSize        =  4                 ;
-    private int  responseCacheSize     =  1000              ;
+    private int  responseCacheSize     =  500               ;
     private int  selectSize            =  5000              ;
-    private int  maxConcurrentUsers    =  -1                ;
+    private int  maxConcurrentUsers    =  Integer.MAX_VALUE ;
     
     Map<String ,String >             security               ;
     
@@ -58,7 +58,7 @@ public class YamlConfigurator implements IConfigurator      {
     private String  httpPort          = "8080"      ;
     private String  httpsPort         = "8443"      ;
     private String  transport         = "HTTP"      ; // HTTPS 
-    private boolean SelfSsl           = true        ;
+    private boolean SelfSsl           = true        ; // false
  
     /* None SelfSSL Configuration */
     
@@ -70,35 +70,35 @@ public class YamlConfigurator implements IConfigurator      {
     
     /* File Config Properties */
     
-    private final String TYPE                = "type" ;
-    private final String ALIAS               = "ALIAS" ;
-    private final String LOGIN               = "login" ;
-    private final String PLAIN               = "plain" ;
-    private final String _RATIO              = "Ratio" ;
-    private final String ACCEPT              = "Accept" ;
-    private final String CIPHERS             = "Ciphers" ;
-    private final String SECURED             = "secured" ;
-    private final String SELF_SSL            = "SELF_SSL" ;
-    private final String ALGOSIGN            = "algoSign" ;
-    private final String PASSWORD            = "password" ;
-    private final String TIMESTAMP           = "timeStamp" ;
-    private final String TABLENAME           = "tableName" ;
-    private final String TRANSPORT           = "TRANSPORT" ;
-    private final String HTTP_PORT           = "HTTP_PORT" ;
-    private final String HTTPS_PORT          = "HTTPS_PORT" ;
-    private final String CREDENTIALS         = "credentials" ;
-    private final String PARAMTOSIGN         = "paramToSign" ;
-    private final String SERVICECONF         = "serviceConf" ;
-    private final String KEYCLOAKFILE        = "keycloakFile" ;
-    private final String KEY_PASSWORD        = "KEY_PASSWORD" ;
-    private final String KEY_STORE_PATH      = "KEY_STORE_PATH" ;
-    private final String THREADPOOLSIZE      = "ThreadPoolSize" ;
-    private final String AUTHENTICATION      = "authentication" ;
-    private final String LOGINCOLUMNNAME     = "loginColumnName" ;
-    private final String RESPONSECACHESIZE   = "ResponseCacheSize" ;
-    private final String PASSWORDCOLUMNNAME  = "passwordColumnName" ;
-    private final String KEY_STORE_PASSWORD  = "KEY_STORE_PASSWORD" ;
-    private final String MAXCONCURRENTUSERS  = "MaxConcurrentUsers" ;
+    private final String TYPE                = "type"                ;
+    private final String ALIAS               = "ALIAS"               ;
+    private final String LOGIN               = "login"               ;
+    private final String PLAIN               = "plain"               ;
+    private final String _RATIO              = "Ratio"               ;
+    private final String ACCEPT              = "Accept"              ;
+    private final String CIPHERS             = "Ciphers"             ;
+    private final String SECURED             = "secured"             ;
+    private final String SELF_SSL            = "SELF_SSL"            ;
+    private final String ALGOSIGN            = "algoSign"            ;
+    private final String PASSWORD            = "password"            ;
+    private final String TIMESTAMP           = "timeStamp"           ;
+    private final String TABLENAME           = "tableName"           ;
+    private final String TRANSPORT           = "TRANSPORT"           ;
+    private final String HTTP_PORT           = "HTTP_PORT"           ;
+    private final String HTTPS_PORT          = "HTTPS_PORT"          ;
+    private final String CREDENTIALS         = "credentials"         ;
+    private final String PARAMTOSIGN         = "paramToSign"         ;
+    private final String SERVICECONF         = "serviceConf"         ;
+    private final String KEYCLOAKFILE        = "keycloakFile"        ;
+    private final String KEY_PASSWORD        = "KEY_PASSWORD"        ;
+    private final String KEY_STORE_PATH      = "KEY_STORE_PATH"      ;
+    private final String THREADPOOLSIZE      = "ThreadPoolSize"      ;
+    private final String AUTHENTICATION      = "authentication"      ;
+    private final String LOGINCOLUMNNAME     = "loginColumnName"     ;
+    private final String RESPONSECACHESIZE   = "ResponseCacheSize"   ;
+    private final String PASSWORDCOLUMNNAME  = "passwordColumnName"  ;
+    private final String KEY_STORE_PASSWORD  = "KEY_STORE_PASSWORD"  ;
+    private final String MAXCONCURRENTUSERS  = "MaxConcurrentUsers"  ;
     private final String VALIDREQUESTTIMEOUT = "validRequestTimeout" ;
     
     public YamlConfigurator() {
