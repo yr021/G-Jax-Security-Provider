@@ -149,7 +149,7 @@ public class CustomSignOn implements ISignOn {
              passwordSignature.equalsIgnoreCase(SHA1)  && 
              storedPassword.equalsIgnoreCase(PLAIN)  )  {
            try {
-               password =  Digestor.toString( Digestor.toSHA1( storedPassword )) ;
+               password =  Digestor.toString( Digestor.toSHA1( password )) ;
            } catch (NoSuchAlgorithmException ex) {
                Logger.getLogger( CustomSignOn.class.getName())
                                              .log(Level.SEVERE, null, ex ) ;
@@ -161,7 +161,7 @@ public class CustomSignOn implements ISignOn {
                   passwordSignature.equalsIgnoreCase(MD5)   && 
                   storedPassword.equalsIgnoreCase(PLAIN)  )  {
            try {
-               password =  Digestor.toString ( Digestor.toMD5(storedPassword ) ) ;
+               password =  Digestor.toString ( Digestor.toMD5(password ) ) ;
            } catch (NoSuchAlgorithmException ex) {
                Logger.getLogger( CustomSignOn.class.getName())
                                              .log(Level.SEVERE, null, ex ) ;
@@ -172,7 +172,7 @@ public class CustomSignOn implements ISignOn {
                   passwordSignature.equalsIgnoreCase(SHA2)  && 
                   storedPassword.equalsIgnoreCase(PLAIN)  )  {
            try {
-               password =  Digestor.toString ( Digestor.toSHA256(storedPassword ) ) ;
+               password =  Digestor.toString ( Digestor.toSHA256(password ) ) ;
            } catch (NoSuchAlgorithmException ex) {
                Logger.getLogger( CustomSignOn.class.getName())
                                              .log(Level.SEVERE, null, ex) ;
