@@ -47,10 +47,10 @@ public class CustomSignOn implements ISignOn {
         String _token[] = token.replaceAll(" + ", " ").split(" ") ;
         if(_token.length < 3 ) return false                       ;
         
-        if( expiration != null && expiration > 0  )            {
+        if( expiration != null && expiration > 0  )               {
             
-            long clientTime   = Long.parseLong( _token[1])     ;
-            long now          = Instant.now().getEpochSecond() ;
+            long clientTime   = Long.parseLong( _token[1])        ;
+            long now          = Instant.now().getEpochSecond()    ;
             
             if( clientTime > now ) {
                 throw  new BusinessException(" Error : Not Expected TimeStamp >>> " ) ;
