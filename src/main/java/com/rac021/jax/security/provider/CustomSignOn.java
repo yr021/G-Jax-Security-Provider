@@ -77,11 +77,6 @@ public class CustomSignOn implements ISignOn {
        String loginColumnName    = configurator.getLoginColumnName()    ;
        String passwordColumnName = configurator.getPasswordColumnName() ;
        
-       Query query = entityManager.createNativeQuery( " SELECT " + passwordColumnName + 
-                                                      " FROM " + tableName            + 
-                                                      " WHERE "  + loginColumnName    +
-                                                      " = '" + _login + "'" )         ;
-            
        if( tableName == null || loginColumnName == null || passwordColumnName == null ) {
          if( tableName == null ) {
              throw  new BusinessException( " tableName Can't be NULL. "
@@ -99,10 +94,16 @@ public class CustomSignOn implements ISignOn {
                                            + "in the serviceConf yaml !! " ) ;
          }
        }
-       
+        
+       Query query = entityManager.createNativeQuery( " SELECT " + passwordColumnName + 
+                                                      " FROM   " + tableName          + 
+                                                      " WHERE  " + loginColumnName    +
+                                                      " = ?    " )                    ;
+       query.setParameter(1, _login )                                                 ;
+        
        List<String> passwordList = query.getResultList() ;
        
-       if(passwordList.isEmpty()) return false ;
+       if(passwordList.isEmpty()) return false           ;
        
        String loginSignature      = configurator.getLoginSignature()     ;
        String passwordSignature   = configurator.getPasswordSignature()  ;
