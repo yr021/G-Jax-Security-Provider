@@ -53,7 +53,7 @@ public class CustomSignOn implements ISignOn {
             long now          = Instant.now().getEpochSecond()    ;
             
             if( clientTime > now ) {
-                throw  new BusinessException(" Error : Not Expected TimeStamp >>> " ) ;
+                throw  new BusinessException(" Error : Not Expected TimeStamp " ) ;
             }
             
             long expiredTime  = now - expiration ;
